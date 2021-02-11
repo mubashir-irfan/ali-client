@@ -1,0 +1,88 @@
+<div class="container">
+  This is profile component
+  <div class="profile-form">
+    <div class="text-center"><h3>Your Profile</h3></div>
+    <p *ngIf="hasError" class="text-danger text-center">{{ errorStatement }}</p>
+    <form [formGroup]="profileForm" (ngSubmit)="onSave()">
+
+      <div class="form-group">
+        <!-- Username -->
+        <label for="username">Username</label>
+        <div class="controls">
+          <p>{{user ? user.username : ''}}</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <!-- Password-->
+        <label for="password">Password*</label>
+        <div class="controls">
+          <input type="password" id="password" placeholder="Password" class="form-control" formControlName="password">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Name*</label>
+        <div class="controls">
+          <input type="text" id="name" placeholder="Name" class="form-control" formControlName="name">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address*</label>
+        <div class="controls">
+          <input type="text" id="address" placeholder="Address" class="form-control" formControlName="address">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="cnic">CNIC*</label>
+        <p class="form-tip">Enter 13 digit CNIC without dashes</p>
+        <div class="controls">
+          <input type="number" placeholder="CNIC" class="form-control" formControlName="cnic">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="accountTitle">Account Title*</label>
+        <div class="controls">
+          <input type="text" id="accounttitle" placeholder="Account Title" class="form-control" formControlName="accountTitle">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="accountNumber">Account Number*</label>
+        <div class="controls">
+          <input type="text" id="accountNumber" placeholder="Account Number" class="form-control" formControlName="accountNumber">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="currencyCode">Currency Code*</label>
+        <div class="controls">
+          <input type="text" id="currencyCode" placeholder="Currency Code" class="form-control" formControlName="currencyCode">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="branchName">Branch Name*</label>
+        <div class="controls">
+          <input type="text" id="branchName" placeholder="Branch Name" class="form-control" formControlName="branchName">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="country">Country*</label>
+        <div class="controls">
+          <input type="text" id="country" placeholder="Country" class="form-control" formControlName="country">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit" style="width: 15%" [disabled]="profileForm.invalid">
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.btn-primary:disabled {
+  background-color: grey;
+  border: none;
+}
+
+.form-tip {
+  font-size: 0.7rem;
+  color: grey;
+}
